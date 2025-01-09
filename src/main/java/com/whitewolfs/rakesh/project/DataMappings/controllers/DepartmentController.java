@@ -34,5 +34,15 @@ public class DepartmentController {
     public DepartmentEntity getAssignDepartmentOfManager(@PathVariable Long employeeId){
         return departmentService.getAssignDepartmentOfManager(employeeId);
     }
+    @PutMapping("assign/{departmentId}/worker/{employeeId}")
+    public DepartmentEntity assignWorkerToDepartment(@PathVariable Long departmentId,
+                                                      @PathVariable Long employeeId){
+        return departmentService.assignWorkerToDepartment(departmentId, employeeId);
+    }
 
+    @PutMapping("assign/{departmentId}/freelnacer/{employeeId}")
+    public DepartmentEntity assignFreelnacerToDepartment(@PathVariable Long departmentId,
+                                                     @PathVariable Long employeeId){
+        return departmentService.assignFreelnacerToDepartment(departmentId, employeeId);
+    }
 }
